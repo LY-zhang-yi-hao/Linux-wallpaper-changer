@@ -1,227 +1,219 @@
-# 🎨 Linux Wallpaper Changer v2.0
+# 🎨 自动壁纸更换器 v2.0
 
-An intelligent wallpaper changing system designed for Ubuntu 20.04 Unity desktop environment, featuring multiple rotation modes, pause/resume functionality, and smart log management.
+一个为Ubuntu 20.04 Unity桌面环境定制的智能壁纸更换系统，支持多种轮换模式、暂停/恢复功能和智能日志管理。
 
-## ✨ Features
+## ✨ 功能特点
 
-### 🔄 **Smart Rotation System**
-- **Random Mode**: Intelligently avoids recently used wallpapers to ensure diversity
-- **Sequential Mode**: Changes wallpapers in file order, never repeating
-- **Dynamic Switching**: Switch between rotation modes anytime
+### 🔄 **智能轮换系统**
+- **随机模式**：智能避免最近使用的壁纸，确保多样性
+- **顺序模式**：按文件顺序依次更换，永不重复
+- **动态切换**：随时切换轮换模式
 
-### ⏸️ **Flexible Control**
-- **Pause/Resume**: Pause or resume wallpaper changing anytime
-- **Instant Test**: Immediately test wallpaper changing effects
-- **Status Monitoring**: Real-time service status and history viewing
+### ⏸️ **灵活控制**
+- **暂停/恢复**：随时暂停或恢复壁纸更换
+- **即时测试**：立即测试壁纸更换效果
+- **状态监控**：实时查看服务状态和历史记录
 
-### 📝 **Smart Log Management**
-- **Auto Rotation**: Automatically backup logs when file exceeds 1MB
-- **Size Limit**: Keep the most recent 1000 log entries
-- **One-click Cleanup**: Quick cleanup of all log files
+### 📝 **智能日志管理**
+- **自动轮换**：日志文件超过1MB自动备份
+- **大小限制**：保持最近1000行日志记录
+- **一键清理**：快速清理所有日志文件
 
-### 🎯 **Other Features**
-- 🖼️ **Multi-format Support**: Supports jpg, jpeg, png, webp formats
-- 🚀 **Auto-start**: Automatically starts after system boot
-- 📊 **Detailed Statistics**: Shows image count and usage history
-- 🎨 **Friendly Interface**: Colorful output and emoji icons
+### 🎯 **其他特性**
+- 🖼️ **多格式支持**：支持jpg, jpeg, png, webp格式
+- 🚀 **开机自启**：系统启动后自动开始工作
+- 📊 **详细统计**：显示图片数量和使用历史
+- 🎨 **友好界面**：彩色输出和emoji图标
 
-## 📁 File Structure
+## 📁 文件说明
 
-### 🎯 **Core Files**
-- `wallpaper_changer.sh` - Main script for intelligent wallpaper selection and setting
-- `wallpaper_menu.sh` - **Interactive Management Interface** (Recommended)
-- `install_wallpaper_changer.sh` - Traditional command-line management script
-- `wallpaper` - Quick launch script
+### 🎯 **核心文件**
+- `wallpaper_changer.sh` - 主脚本，负责智能选择和设置壁纸
+- `wallpaper_menu.sh` - **交互式管理界面** (推荐使用)
+- `install_wallpaper_changer.sh` - 传统命令行管理脚本
+- `wallpaper` - 快捷启动脚本
 
-### ⚙️ **System Files**
-- `wallpaper-changer.service` - systemd service configuration file
-- `wallpaper-changer.timer` - systemd timer configuration file
-- `wallpaper_manager` - Global quick management script
+### ⚙️ **系统文件**
+- `wallpaper-changer.service` - systemd服务配置文件
+- `wallpaper-changer.timer` - systemd定时器配置文件
+- `wallpaper_manager` - 全局快捷管理脚本
 
-## 🚀 Quick Start
+## 🚀 快速开始
 
-### 🎯 **Recommended: Interactive Interface**
+### 🎯 **推荐方式：交互式界面**
 ```bash
-# Launch the friendly interactive management interface
+# 启动友好的交互式管理界面
 ./wallpaper_menu.sh
 
-# Or use the quick command
+# 或使用快捷命令
 ./wallpaper
 ```
 
-**Interface Preview:**
+**界面预览：**
 ```
 -----------------------------------------------
-🎨 Welcome to Smart Wallpaper Changer!    Version: v2.0
-Wallpaper service running (random mode), Images: 76
-Current wallpaper directory: ~/Pictures
-GitHub: https://github.com/LY-zhang-yi-hao/Linux-wallpaper-changer
+🎨 欢迎使用智能壁纸更换器！    版本：v2.0
+壁纸服务正在运行（random模式），图片数量：76张
+当前壁纸目录：~/Pictures
+GitHub：https://github.com/your-repo/wallpaper-changer
 -----------------------------------------------
- 1 Start/Restart Service
- 2 Pause/Resume Service
- 3 Stop Service
- 4 Rotation Mode Settings
- 5 Change Wallpaper Now
- 6 View Detailed Status
- 7 Log Management
- 8 System Settings
- 9 Install/Uninstall
+ 1 启动/重启服务
+ 2 暂停/恢复服务
+ 3 停止服务
+ 4 轮换模式设置
+ 5 立即更换壁纸
+ 6 查看详细状态
+ 7 日志管理
+ 8 系统设置
+ 9 安装/卸载
 -----------------------------------------------
- 0 Exit Script
-Please enter the corresponding number >
+ 0 退出脚本
+请输入对应数字 >
 ```
 
-### 📋 **Traditional Command Line**
+### 📋 **传统命令行方式**
 ```bash
-# Install service
+# 安装服务
 ./install_wallpaper_changer.sh install
 
-# View status
+# 查看状态
 ./install_wallpaper_changer.sh status
 
-# Test functionality
+# 测试功能
 ./install_wallpaper_changer.sh test
 ```
 
-## 🛠️ Management Commands
+## 🛠️ 管理命令
 
-### 📋 **Basic Operations**
+### 📋 **基本操作**
 ```bash
-# Install and start service
+# 安装并启动服务
 ./install_wallpaper_changer.sh install
 
-# Start/stop service
+# 启动/停止服务
 ./install_wallpaper_changer.sh start
 ./install_wallpaper_changer.sh stop
 
-# View status
+# 查看状态
 ./install_wallpaper_changer.sh status
 
-# Test functionality
+# 测试功能
 ./install_wallpaper_changer.sh test
 
-# Uninstall service
+# 卸载服务
 ./install_wallpaper_changer.sh uninstall
 ```
 
-### 🎛️ **Advanced Features**
+### 🎛️ **高级功能**
 ```bash
-# Pause/resume wallpaper changing
+# 暂停/恢复壁纸更换
 ./install_wallpaper_changer.sh pause
 ./install_wallpaper_changer.sh resume
 
-# Set rotation mode
-./install_wallpaper_changer.sh mode random      # Random mode
-./install_wallpaper_changer.sh mode sequential  # Sequential mode
+# 设置轮换模式
+./install_wallpaper_changer.sh mode random      # 随机模式
+./install_wallpaper_changer.sh mode sequential  # 顺序模式
 
-# Log management
-./install_wallpaper_changer.sh clean-logs       # Clean logs
+# 日志管理
+./install_wallpaper_changer.sh clean-logs       # 清理日志
 
-# Detailed status information
+# 详细状态信息
 ./install_wallpaper_changer.sh info
 
-# Show help
+# 显示帮助
 ./install_wallpaper_changer.sh help
 ```
 
-### 🔧 **Direct Script Commands**
+### 🔧 **直接脚本命令**
 ```bash
-# Use main script directly
-./wallpaper_changer.sh --test          # Test change
-./wallpaper_changer.sh --status        # Detailed status
-./wallpaper_changer.sh --pause         # Pause service
-./wallpaper_changer.sh --resume        # Resume service
-./wallpaper_changer.sh --clean-logs    # Clean logs
-./wallpaper_changer.sh --mode random   # Set mode
-./wallpaper_changer.sh --help          # Show help
+# 直接使用主脚本
+./wallpaper_changer.sh --test          # 测试更换
+./wallpaper_changer.sh --status        # 详细状态
+./wallpaper_changer.sh --pause         # 暂停服务
+./wallpaper_changer.sh --resume        # 恢复服务
+./wallpaper_changer.sh --clean-logs    # 清理日志
+./wallpaper_changer.sh --mode random   # 设置模式
+./wallpaper_changer.sh --help          # 显示帮助
 ```
 
-## 📝 Log Viewing
+## 📝 日志查看
 
-### View wallpaper change logs
+### 查看壁纸更换日志
 ```bash
 tail -f ~/.wallpaper_changer.log
 ```
 
-### View service logs
+### 查看服务日志
 ```bash
 tail -f ~/.wallpaper_service.log
 ```
 
-### View systemd logs
+### 查看systemd日志
 ```bash
 journalctl --user -u wallpaper-changer.timer -f
 ```
 
-## ⚙️ Configuration
+## ⚙️ 配置说明
 
-### Change wallpaper directory
-Edit the `WALLPAPER_DIR` variable in `wallpaper_changer.sh`:
+### 更改壁纸文件夹
+编辑 `wallpaper_changer.sh` 文件中的 `WALLPAPER_DIR` 变量：
 ```bash
-WALLPAPER_DIR="$HOME/Pictures"  # Change to your wallpaper directory path
+WALLPAPER_DIR="$HOME/Pictures"  # 改为你的壁纸文件夹路径
 ```
 
-### Change rotation interval
-Edit the `OnUnitActiveSec` setting in `wallpaper-changer.timer`:
+### 更改更换间隔
+编辑 `wallpaper-changer.timer` 文件中的 `OnUnitActiveSec` 设置：
 ```ini
-OnUnitActiveSec=5min  # Change to your desired interval
+OnUnitActiveSec=5min  # 改为你想要的间隔时间
 ```
 
-After modification, reinstall the service:
+修改后需要重新安装服务：
 ```bash
 ./install_wallpaper_changer.sh uninstall
 ./install_wallpaper_changer.sh install
 ```
 
-## 🔧 Troubleshooting
+## 🔧 故障排除
 
-### Service won't start
-1. Check script permissions: `chmod +x wallpaper_changer.sh`
-2. Check if wallpaper directory exists: `ls ~/Pictures`
-3. View detailed errors: `systemctl --user status wallpaper-changer.timer`
+### 服务无法启动
+1. 检查脚本权限：`chmod +x wallpaper_changer.sh`
+2. 检查壁纸文件夹是否存在：`ls ~/Pictures`
+3. 查看详细错误：`systemctl --user status wallpaper-changer.timer`
 
-### Wallpaper not changing
-1. Check for supported image files: `ls ~/Pictures/*.{jpg,jpeg,png,webp}`
-2. Test script manually: `./wallpaper_changer.sh --test`
-3. View logs: `tail ~/.wallpaper_changer.log`
+### 壁纸没有更换
+1. 检查是否有支持的图片文件：`ls ~/Pictures/*.{jpg,jpeg,png,webp}`
+2. 手动测试脚本：`./wallpaper_changer.sh --test`
+3. 查看日志：`tail ~/.wallpaper_changer.log`
 
-### Auto-start not working
-Ensure service is enabled:
+### 开机不自启
+确保服务已启用：
 ```bash
 systemctl --user enable wallpaper-changer.timer
 ```
 
-## 📊 System Requirements
+## 📊 系统要求
 
 - Ubuntu 20.04 LTS
-- Unity desktop environment
-- systemd user service support
-- At least one supported format image in ~/Pictures directory
+- Unity桌面环境
+- systemd用户服务支持
+- 至少一张支持格式的图片在~/Pictures文件夹中
 
-## 🎯 Technical Implementation
+## 🎯 技术实现
 
-- **Script Language**: Bash
-- **Service Management**: systemd user service
-- **Wallpaper Setting**: gsettings (GNOME/Unity)
-- **Scheduled Execution**: systemd timer
-- **Log Recording**: Custom log files
+- **脚本语言**：Bash
+- **服务管理**：systemd用户服务
+- **壁纸设置**：gsettings (GNOME/Unity)
+- **定时执行**：systemd timer
+- **日志记录**：自定义日志文件
 
-## 📞 Support
+## 📞 支持
 
-If you encounter problems, please:
-1. Check log files
-2. Run test commands
-3. Check service status
-4. Confirm system environment meets requirements
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
+如果遇到问题，请：
+1. 查看日志文件
+2. 运行测试命令
+3. 检查服务状态
+4. 确认系统环境符合要求
 
 ---
 
-🎨 **Enjoy your dynamic desktop wallpapers!** ✨
+🎨 **享受你的动态桌面壁纸吧！** ✨
