@@ -1,0 +1,23 @@
+[Unit]
+# ⏰ 自动壁纸更换定时器
+Description=Timer for Automatic Wallpaper Changer
+Documentation=Triggers wallpaper change every 5 minutes
+Requires=wallpaper-changer.service
+
+[Timer]
+# 定时器设置
+# OnBootSec: 系统启动后多久开始第一次执行
+OnBootSec=2min
+
+# OnUnitActiveSec: 上次执行完成后多久再次执行
+OnUnitActiveSec=5min
+
+# 持久化：如果系统关机时错过了执行时间，开机后会立即执行
+Persistent=true
+
+# 随机延迟：避免所有定时任务同时执行
+RandomizedDelaySec=30sec
+
+[Install]
+# 安装到用户会话目标
+WantedBy=timers.target

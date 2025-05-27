@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# 🎨 壁纸管理器快捷脚本
+# 这个脚本可以放在任何地方，用于管理壁纸更换服务
+
+# 壁纸更换器安装目录
+WALLPAPER_DIR="/home/zyh/Desktop/WallpaperChanger"
+INSTALL_SCRIPT="$WALLPAPER_DIR/install_wallpaper_changer.sh"
+
+# 检查安装目录是否存在
+if [ ! -d "$WALLPAPER_DIR" ]; then
+    echo "❌ 错误：找不到壁纸更换器目录: $WALLPAPER_DIR"
+    exit 1
+fi
+
+# 检查安装脚本是否存在
+if [ ! -f "$INSTALL_SCRIPT" ]; then
+    echo "❌ 错误：找不到安装脚本: $INSTALL_SCRIPT"
+    exit 1
+fi
+
+# 执行安装脚本并传递所有参数
+cd "$WALLPAPER_DIR"
+exec "$INSTALL_SCRIPT" "$@"

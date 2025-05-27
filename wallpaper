@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# 🎨 壁纸更换器快捷启动脚本
+# 这个脚本可以放在任何地方，用于快速启动壁纸管理界面
+
+# 壁纸更换器安装目录
+WALLPAPER_DIR="/home/zyh/Desktop/WallpaperChanger"
+MENU_SCRIPT="$WALLPAPER_DIR/wallpaper_menu.sh"
+
+# 检查安装目录是否存在
+if [ ! -d "$WALLPAPER_DIR" ]; then
+    echo "❌ 错误：找不到壁纸更换器目录: $WALLPAPER_DIR"
+    exit 1
+fi
+
+# 检查菜单脚本是否存在
+if [ ! -f "$MENU_SCRIPT" ]; then
+    echo "❌ 错误：找不到菜单脚本: $MENU_SCRIPT"
+    exit 1
+fi
+
+# 切换到壁纸目录并启动菜单
+cd "$WALLPAPER_DIR"
+exec "$MENU_SCRIPT" "$@"
